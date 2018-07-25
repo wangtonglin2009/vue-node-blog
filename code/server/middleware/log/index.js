@@ -1,6 +1,6 @@
-import logger from './log'
+const logger = require('./log');
 
-export default opts => {
+module.exports = opts => {
     let loggerMiddleware = logger(opts);
     return async (ctx, next) => {
         return loggerMiddleware(ctx, next)

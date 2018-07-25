@@ -1,7 +1,7 @@
-import jwt from 'jsonwebtoken'
-import conf from '../../config'
+const jwt = require('jsonwebtoken');
+const conf = require('../../config');
 
-export default () => {
+module.exports = () => {
     return async (ctx, next) => {
         if ( conf.auth.blackList.some(v => ctx.path.indexOf(v) >= 0) ) {
             let token = ctx.cookies.get(conf.auth.tokenKey);

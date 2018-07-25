@@ -1,4 +1,4 @@
-import path from 'path'
+const path = require('path');
 const auth = {
     admin_secret: 'admin-token',
     tokenKey: 'Token-Auth',
@@ -14,7 +14,7 @@ const log = {
 }
 const port = process.env.NODE_ENV === 'production' ? '80' : '3000'
 
-export default {
+module.exports = {
     env: process.env.NODE_ENV,
     port,
     auth,
@@ -22,7 +22,7 @@ export default {
     mongodb: {
         username: 'cd',
         pwd: 123456,
-        address: 'localhost:27017',
+        address: '18.221.140.44:27017',
         db: 'test'
     }
 }

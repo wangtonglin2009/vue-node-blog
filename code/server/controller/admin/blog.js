@@ -1,6 +1,6 @@
-import blogModel from '../../models/blog'
-import path from 'path'
-import marked from 'marked'
+const blogModel = require('../../models/blog');
+const path = require('path');
+const marked = require('marked');
 
 marked.setOptions({
     renderer: new marked.Renderer(),

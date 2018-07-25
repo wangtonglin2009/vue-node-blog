@@ -10,6 +10,7 @@ module.exports = {
             proxyTable: {  //proxy代理
                 '/admin_demo_api': {
                     target: 'http://localhost:3000/admin_demo_api/',
+                    // target: 'https://yckzrlklzg.execute-api.us-east-2.amazonaws.com/dev/admin_demo_api/',                    
                     changeOrigin: true,
                     pathRewrite: {
                       '^/admin_demo_api': '/'

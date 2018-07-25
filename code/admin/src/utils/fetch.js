@@ -1,7 +1,7 @@
 import axios from 'axios'
 import qs from 'qs'
 import { Message } from 'element-ui'
-
+import { baseUrl } from './env'
 
 axios.defaults.withCredentials = true 
 
@@ -52,7 +52,7 @@ export default {
         if (!url) return
         return axios({
             method: 'get',
-            url: prefix + url,
+            url: baseUrl + prefix + url,
             params,
             timeout: 30000
         }).then(checkStatus).then(checkCode)
@@ -61,7 +61,7 @@ export default {
         if (!url) return
         return axios({
             method: 'post',
-            url: prefix + url,
+            url: baseUrl + prefix + url,
             data: qs.stringify(data),
             timeout: 30000
         }).then(checkStatus).then(checkCode)
@@ -70,7 +70,7 @@ export default {
         if (!url) return
         return axios({
             method: 'post',
-            url: prefix + url,
+            url: baseUrl + prefix + url,
             data
         }).then(checkStatus).then(checkCode)
     }

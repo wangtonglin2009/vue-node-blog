@@ -1,4 +1,4 @@
-import db from '../mongodb'
+const db = require('../mongodb');
 let userSchema = db.Schema({
     username: String,
     pwd: String,
@@ -8,4 +8,4 @@ let userSchema = db.Schema({
     createTime: { type: Date, default: Date.now},
     loginTime: Date
 })
-export default db.model('user', userSchema);
+module.exports = db.model('user', userSchema);

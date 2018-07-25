@@ -1,4 +1,4 @@
-import db from '../mongodb'
+const db = require('../mongodb');
 let blogSchema = db.Schema({
     type: Array,
     title: String,
@@ -12,4 +12,4 @@ let blogSchema = db.Schema({
     releaseTime: Date,
     createTime: { type: Date, default: Date.now}
 })
-export default db.model('blog', blogSchema)
+module.exports = db.model('blog', blogSchema)

@@ -1,6 +1,6 @@
-import jwt from 'jsonwebtoken'
-import conf from '../../config'
-import userModel from '../../models/user'
+const jwt = require('jsonwebtoken');
+const conf = require('../../config');
+const userModel = require('../../models/user');
 module.exports = {
     async login (ctx, next) {
         console.log('----------------登录接口 user/login-----------------------');

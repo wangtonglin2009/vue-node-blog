@@ -1,9 +1,9 @@
-import * as get_Info_func from './get_info'
-import * as db_func from './db'
-import * as file_func from './file'
+const get_Info_func = require('./get_info');
+const db_func = require('./db');
+const file_func = require('./file');
 
 
-export default () => {
+module.exports =  () => {
     const func = Object.assign({}, get_Info_func, db_func, file_func)
     return async (ctx, next) => {
         for (let v in func) {

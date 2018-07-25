@@ -3,7 +3,7 @@
  * @param model 要操作数据库的模型
  * @param conditions 增加的条件,如{id:xxx}
  */
-export const add = (model, conditions) => {
+const add = (model, conditions) => {
     return new Promise((resolve, reject) => {
         model.create(conditions, (err, res) => {
             if (err) {
@@ -26,7 +26,7 @@ export const add = (model, conditions) => {
  * @param update 更新条件{set{id:xxx}}
  * @param options
  */
-export const update = (model, conditions, update, options) => {
+const update = (model, conditions, update, options) => {
     return new Promise((resolve, reject) => {
         model.update(conditions, update, options, (err, res) => {
             if (err) {
@@ -51,7 +51,7 @@ export const update = (model, conditions, update, options) => {
  * @param conditions
  */
 
-export const remove = (model, conditions) => {
+const remove = (model, conditions) => {
     return new Promise((resolve, reject) => {
         model.remove(conditions, function (err, res) {
             if (err) {
@@ -78,7 +78,7 @@ export const remove = (model, conditions) => {
  * @param options
  * @param callback
  */
-export const find = (model, conditions, fields, options = {}) => {
+const find = (model, conditions, fields, options = {}) => {
     var sort = options.sort == undefined ? {
         _id: -1
     } : options.sort;
@@ -112,7 +112,7 @@ export const find = (model, conditions, fields, options = {}) => {
  * @param options
  * @param callback
  */
-export const findOne = (model, conditions, fields, options = {}) => {
+const findOne = (model, conditions, fields, options = {}) => {
     var sort = options.sort == undefined ? {
         _id: -1
     } : options.sort;
@@ -136,7 +136,7 @@ export const findOne = (model, conditions, fields, options = {}) => {
 }
 
 
-export const findPage = async (model, conditions, fields, options = {}) => {
+const findPage = async (model, conditions, fields, options = {}) => {
     var sort = options.sort == undefined ? {
         _id: -1
     } : options.sort;
@@ -184,5 +184,10 @@ export const findPage = async (model, conditions, fields, options = {}) => {
 }
 
 
-
+exports.add = add;
+exports.update = update;
+exports.remove = remove;
+exports.find = find;
+exports.findOne = findOne;
+exports.findPage = findPage;
 

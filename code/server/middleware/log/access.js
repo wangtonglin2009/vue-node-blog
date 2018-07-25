@@ -1,4 +1,4 @@
-export default (ctx, msg, commonInfo) => {
+module.exports = (ctx, msg, commonInfo) => {
     const {
         method, // 请求方法 get post或其他
         url, // 请求链接

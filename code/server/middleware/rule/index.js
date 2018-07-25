@@ -1,7 +1,7 @@
-import Path from 'path'
-import fs from 'fs'
+const Path = require('path');
+const fs = require('fs');
 
-export default opts => {
+module.exports = opts => {
     let {
         app,
         rules = []

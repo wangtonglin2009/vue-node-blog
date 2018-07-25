@@ -1,5 +1,5 @@
-import blogModel from '../../models/blog'
-import path from 'path'
+const blogModel = require('../../models/blog');
+const path = require('path');
 
 module.exports = {
     async list(ctx, next) {

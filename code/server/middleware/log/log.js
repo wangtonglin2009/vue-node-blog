@@ -1,11 +1,11 @@
-import log4js from 'log4js'
-import access from './access' // 引入日志输出信息的封装文件
-import config from '../../config'
+const log4js = require('log4js');
+const access = require('./access'); // 引入日志输出信息的封装文件
+const config = require('../../config');
 const methods = ["trace", "debug", "info", "warn", "error", "fatal", "mark"];
 
 // 提取默认公用参数对象
 const baseInfo = config.log
-export default (options = {}) => {
+module.exports = (options = {}) => {
     let contextLogger = {}, //错误日志等级对象，最后会赋值给ctx上，用于打印各种日志
         appenders = {}, //日志配置
         opts = Object.assign({}, baseInfo, options), //系统配置

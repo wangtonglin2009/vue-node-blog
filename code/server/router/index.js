@@ -1,9 +1,9 @@
-import fs from 'fs'
-import path from 'path'
-import koaRouter from 'koa-router'
+const fs = require('fs');
+const path = require('path');
+const koaRouter = require('koa-router');
 const router = koaRouter()
 
-export default app => {
+module.exports = app => {
 
 /*----------------------admin-------------------------------*/
     // 用户请求
@@ -31,7 +31,5 @@ export default app => {
     router.get('/client_demo_api/blog/info', app.client.blog.info)
 
     
-
-
     app.use(router.routes()).use(router.allowedMethods());
 }

@@ -1,7 +1,7 @@
-import Busboy from 'busboy'
-import fs from 'fs'
-import path from 'path'
-import conf from '../../config'
+const Busboy = require('busboy');
+const fs = require('fs');
+const path = require('path');
+const conf = require('../../config');
 
 //检测文件并创建文件
 const mkdirSync = dirname => {
@@ -15,7 +15,7 @@ const mkdirSync = dirname => {
     }
 }
 
-export const uploadFile = (ctx, opts) => {
+const uploadFile = (ctx, opts) => {
     //重命名
     function rename (fileName) {
      return Math.random().toString(16).substr(2) + '.' + fileName.split('.').pop()
@@ -73,6 +73,7 @@ export const uploadFile = (ctx, opts) => {
     })
 }
 
+exports.uploadFile = uploadFile;
 // export const uploadFile = (ctx, opts) => {
 //     //重命名
 //     function rename (fileName) {

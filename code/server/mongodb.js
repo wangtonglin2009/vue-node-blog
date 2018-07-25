@@ -1,5 +1,5 @@
-import mongoose from 'mongoose'
-import conf from './config'
+const mongoose = require('mongoose');
+const conf = require('./config');
 // const DB_URL = `mongodb://${conf.mongodb.address}/${conf.mongodb.db}`
 const DB_URL = `mongodb://${conf.mongodb.username}:${conf.mongodb.pwd}@${conf.mongodb.address}/${conf.mongodb.db}`; // 账号登陆
 mongoose.Promise = global.Promise
@@ -10,4 +10,4 @@ mongoose.connect(DB_URL, { useMongoClient: true }, err => {
         console.log("数据库连接成功！")
     }
 })
-export default mongoose
+module.exports =  mongoose

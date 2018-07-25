@@ -1,4 +1,4 @@
-export default () => {
+module.exports = () => {
     let render = ctx => {
         return (json, msg) => {
             ctx.set("Content-Type", "application/json");
